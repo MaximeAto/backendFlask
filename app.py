@@ -60,7 +60,11 @@ class Employe(db.Model):
     id_entreprise = db.Column(db.Integer, db.ForeignKey('entreprise.id_entreprise'), nullable=False)
 
     entreprise = db.relationship('Entreprise', backref='employes')
-    
+ 
+@app.route('/', methods=['GET']) 
+def connexionsuccess():
+    return "démarrage avec succès de votre application"
+   
     
 
 def get_database_connection():
