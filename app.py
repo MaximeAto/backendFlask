@@ -21,7 +21,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-dbx = dropbox.Dropbox('sl.Be9exiJVom_SEuXquBL5a4EJ5Iuvc5ggxlj8rUKcVURskYW8ynst0-99_rPj1yfDGTgSlOC92KVULm0OVUSrIaHkrnQzRcWoeZNrIRdV2d17Fv5xRHQhFnaJLGDCF8djaCJjSGMO')
+dbx = dropbox.Dropbox('sl.Bf6E8lR4_BuV3dfICywPdkW95_t05yDDmRc6gfpZiwEWlrXt5Oxy0qTM6mWcSgfmG-pn1Mr0eahNI84R8QtW3uBb8C_hBr-fVlrtpn_QNvSygK-RbQxrHT953U4aysCOTLScg4JD')
 app.config['JWT_SECRET_KEY'] = "2D4A614E645267556B58703273357638782F413F4428472B4B6250655368566D"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/confidenzbd'
 jwt = JWTManager(app)
@@ -66,15 +66,6 @@ class Employe(db.Model):
 def get_database_connection():
     connection = mysql.connector.connect(**db_config)
     return connection
-
-@app.route('/exist', methods=['POST'])
-def isUserExist(nomuser):
-    existing_entreprise = Entreprise.query.filter_by(nomuser = nomuser).first()
-    if existing_entreprise:
-        return jsonify(message='L\'utilisateur existe déjà'), 409
-    existing_employe = Employe.query.filter_by(nomuser =  nomuser)
-    if existing_employe:
-        return jsonify(message='L\'utilisateur existe déjà'), 409
 
 # Route pour l'inscription
 @app.route('/register', methods=['POST'])
