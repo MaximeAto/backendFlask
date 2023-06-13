@@ -19,21 +19,21 @@ from flask_jwt_extended import (
 )
 from flask_cors import CORS
 
+db_config = {
+    'host': 'sql8.freesqldatabase.com',
+    'user': 'sql8625874',
+    'password': 'qHtsISHmbX',
+    'database': 'sql8625874'
+}
+
 app = Flask(__name__)
 CORS(app)
 dbx = dropbox.Dropbox('sl.Bf6E8lR4_BuV3dfICywPdkW95_t05yDDmRc6gfpZiwEWlrXt5Oxy0qTM6mWcSgfmG-pn1Mr0eahNI84R8QtW3uBb8C_hBr-fVlrtpn_QNvSygK-RbQxrHT953U4aysCOTLScg4JD')
 app.config['JWT_SECRET_KEY'] = "2D4A614E645267556B58703273357638782F413F4428472B4B6250655368566D"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/confidenzbd'
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{db_config['user']}:{db_config['password']}@{db_config['host']}/{db_config['database']}"
 jwt = JWTManager(app)
 
 db = SQLAlchemy(app)
-
-db_config = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '',
-    'database': 'confidenzbd'
-}
 
 # Clé secrète en tant que string
 
