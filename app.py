@@ -61,7 +61,7 @@ class Employe(db.Model):
 
     entreprise = db.relationship('Entreprise', backref='employes')
  
-@app.route('/', methods=['GET']) 
+@app.route('/') 
 def connexionsuccess():
     return "démarrage avec succès de votre application"
    
