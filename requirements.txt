@@ -47,3 +47,4 @@ tzdata==2023.3
 urllib3==1.26.15
 Werkzeug==2.3.4
 wsproto==1.2.0
+gunicorn

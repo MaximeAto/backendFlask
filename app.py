@@ -61,9 +61,6 @@ class Employe(db.Model):
 
     entreprise = db.relationship('Entreprise', backref='employes')
  
-@app.route('/') 
-def connexionsuccess():
-    return "démarrage avec succès de votre application"
    
     
 
@@ -437,6 +434,11 @@ def extract():
         all_rows.append(corps)
             
     return all_rows
+
+
+@app.route('/') 
+def connexionsuccess():
+    return "démarrage avec succès de votre application"
 
 if __name__ == '__main__':
     app.run(debug=True)
