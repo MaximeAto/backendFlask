@@ -1,11 +1,55 @@
-Dans cette api nous allons utiliser panda pour traiter les les fichiers excel qui seront uploadés.
+Voici un exemple de README pour votre application Flask :
 
-Voici la liste des fonctionnalités:
+# Application Flask
 
-    1- Extraire les entêtes
-    2- Extraire les informations
-    3- Créer un nouveau worbook pour chaque sous-menu
-    4- Sauver les données en bd
-    5- Convertir les données excel en dataframe
-    6- Convertir les dataframe en fichier 
-    
+## Description
+Ceci est une application Flask qui permet de gérer les entreprises et les employés associés.
+
+## Fonctionnalités
+L'application offre les fonctionnalités suivantes :
+- Inscription des entreprises
+- Authentification des entreprises et des employés
+- Création d'un dossier dans Dropbox lors de l'inscription
+- Upload de fichiers dans le dossier correspondant à une entreprise
+- Suppression de fichiers
+- Mise à jour de fichiers
+- Liste des fichiers dans un dossier
+- Génération d'un lien de partage pour un fichier
+- Visualisation d'un fichier Excel
+- Extraction des informations d'un fichier Excel
+
+## Installation et exécution
+1. Cloner le projet depuis le dépôt Git : `git clone <url_du_dépôt>`
+2. Installer les dépendances : `pip install -r requirements.txt`
+3. Configurer les informations de la base de données dans le fichier `config.py`
+4. Exécuter l'application : `python app.py`
+5. Accéder à l'application depuis un navigateur à l'adresse `http://localhost:5000`
+
+## Endpoints
+- `POST /register` : Inscription d'une entreprise
+- `POST /loginentreprise` : Authentification d'une entreprise
+- `POST /loginemploye` : Authentification d'un employé
+- `GET /accueil/<string:folder>` : Création d'un dossier dans Dropbox lors de l'inscription
+- `POST /upload/<string:folder>` : Upload d'un fichier dans un dossier Dropbox
+- `DELETE /delete/<string:folder>/<string:filename>` : Suppression d'un fichier
+- `POST /update/<string:folder>/<string:filename>` : Mise à jour d'un fichier
+- `GET /list/<string:folder>` : Liste des fichiers dans un dossier
+- `GET /view/<string:folder>/<string:filename>` : Visualisation d'un fichier Excel
+- `POST /extract` : Extraction des informations d'un fichier Excel
+
+## Configuration
+La configuration de l'application se fait via les variables d'environnement suivantes :
+- `JWT_SECRET_KEY` : Clé secrète utilisée pour générer les tokens JWT
+- `SQLALCHEMY_DATABASE_URI` : URI de la base de données MySQL
+
+## Dépendances
+Les principales dépendances utilisées dans cette application sont :
+- Flask : Framework Web utilisé pour développer l'application
+- SQLAlchemy : ORM pour la gestion de la base de données
+- Flask-JWT-Extended : Extension Flask pour la gestion des tokens JWT
+- Flask-CORS : Extension Flask pour la gestion des CORS
+- openpyxl : Bibliothèque Python pour la manipulation de fichiers Excel
+- dropbox : Bibliothèque Python pour l'interaction avec l'API Dropbox
+- mysql-connector-python : Pilote MySQL pour la connexion à la base de données
+
+N'hésitez pas à personnaliser ce README en fonction de votre application et à ajouter des informations supplémentaires si nécessaire.
