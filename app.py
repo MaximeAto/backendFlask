@@ -20,10 +20,10 @@ from flask_jwt_extended import (
 from flask_cors import CORS
 
 db_config = {
-    'host': 'sql8.freesqldatabase.com',
-    'user': 'sql8625874',
-    'password': 'qHtsISHmbX',
-    'database': 'sql8625874'
+    'host': 'db-confidenz-identifier.czaszcylrrtt.eu-north-1.rds.amazonaws.com',
+    'user': 'maxime',
+    'password': '147852369',
+    'database': 'confidenzbd'
 }
 
 app = Flask(__name__)
