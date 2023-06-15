@@ -28,7 +28,7 @@ db_config = {
 
 app = Flask(__name__)
 CORS(app)
-dbx = dropbox.Dropbox('sl.Bf6E8lR4_BuV3dfICywPdkW95_t05yDDmRc6gfpZiwEWlrXt5Oxy0qTM6mWcSgfmG-pn1Mr0eahNI84R8QtW3uBb8C_hBr-fVlrtpn_QNvSygK-RbQxrHT953U4aysCOTLScg4JD')
+dbx = dropbox.Dropbox('sl.BgUr1_IpMHRNNuVv2BZs6vEQH5X-xzpelPs8LoK0WVIIfUG1cdK2Ffl-8jB_iuK5OvN60llIMhM6X81w3DfXPZXrYfSk26hiSLDP_QpFb8dQl4_U3lNoviYp32-WlVkyJLkrLK_3')
 app.config['JWT_SECRET_KEY'] = "2D4A614E645267556B58703273357638782F413F4428472B4B6250655368566D"
 app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{db_config['user']}:{db_config['password']}@{db_config['host']}/{db_config['database']}"
 jwt = JWTManager(app)
